@@ -7,7 +7,6 @@ if __name__ == '__main__':
     data = pd.read_csv('datasets/data_banknote_authentication.txt', sep=',', header=None)
     X = data.values[:,0:4]
     Y = data.values[:,4]
-    # X = normalize(X, norm='l2', axis=1, copy=True, return_norm=False)
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.3)
     NN = NNet.NeuralNetwork(X_train.shape[1])
     NN.add_layer(20, activation='relu')
